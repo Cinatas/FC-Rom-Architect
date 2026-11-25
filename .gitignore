@@ -1,0 +1,47 @@
+# ===============================================================
+# 本仓库只发布 skill（文档 + 纯文本工具脚本）。
+# 以下内容**永远不要提交**：ROM、逆向产物、工具链二进制。
+# ===============================================================
+
+# --- ROM / 磁盘镜像 / 提取出的分段 ---
+*.nes
+*.fds
+*.unf
+*.nsf
+*.unif
+*.bin
+*.chr
+*.prg
+
+# --- 逆向分析产物 ---
+*.cdl            # Mesen2 Code/Data Logger 输出
+*.mss            # Mesen2 存档
+*.rgd            # Mesen2 最近游戏记录
+*.sym65          # SourceGen 符号表
+*.dis65          # SourceGen 工程
+L1-design.md     # 某一款游戏的设计笔记
+L2-spec/         # 某一款游戏的子系统规格
+L3-data/         # 某一款游戏的数据导出（csv / 截图 / nametable）
+evidence/        # 某一款游戏的原始测量记录
+meta.yml         # 某一款游戏的跨作指标
+
+# --- 工具链（由 bootstrap 脚本下载，绝不入库存二进制） ---
+/tools/
+/Mesen2/
+_downloads/
+*.zip
+Mesen.exe
+MesenCore.dll
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- 编辑器 / 系统 ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

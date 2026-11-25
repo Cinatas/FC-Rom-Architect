@@ -1,0 +1,17 @@
+# 统一 LF 检出：bootstrap.sh 若被转成 CRLF，在 Linux 上会报
+# "bad interpreter: /bin/bash^M"，所以脚本一律保持 LF。
+* text=auto eol=lf
+
+*.sh    text eol=lf
+*.py    text eol=lf
+*.lua   text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+
+# bootstrap.ps1 必须逐字节保持 UTF-8 **带 BOM** + CRLF：
+# 否则 PowerShell 5.1 会把中文按 ANSI 读坏。禁止 git 做任何换行/编码转换。
+*.ps1   -text
+
+*.png   binary
+*.gif   binary
+*.zip   binary

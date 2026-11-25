@@ -1,0 +1,60 @@
+# 跨游戏统一元数据。字段名固定，便于知识库横向比较——不要按游戏改键名。
+
+game: {{GAME}}
+rom_file: {{ROM}}
+sha256: {{SHA256}}
+filesize: {{FILESIZE}}
+
+platform: Famicom / NES
+publisher: {{PUBLISHER}}
+year: {{YEAR}}
+year_source: {{YEAR_SOURCE}}
+region: {{REGION}}
+genre: {{GENRE}}
+players: {{PLAYERS}}
+
+# ---- 卡带结构 ----
+mapper: {{MAPPER}}
+mapper_name: {{MAPPER_NAME}}
+prg_size: {{PRG_SIZE}}
+chr_size: {{CHR_SIZE}}
+mirroring: {{MIRRORING}}
+battery: false
+tv: NTSC
+
+# ---- 逆向量化指标（未测的必须留 null，不要填猜测值）----
+metrics:
+  jump_apex_frames: null
+  jump_height_tiles: null
+  gravity_ratio: null
+  iframes: null
+  hitstop: null
+  scroll_speed: null
+  enemy_density: null
+  screen_time: null
+  powerup_cadence: null
+  rng_kind: null
+  playfield_tiles: null
+
+# ---- 实测的关键数值（供复刻直接照抄）----
+measured:
+  # 每个值都要能在 DESIGN.md 里找到对应证据等级
+  placeholder: null
+
+# ---- 分析进度 ----
+analysis:
+  p0_catalog: done
+  p1_static_census: done
+  p1_mirror_aware_xref: done
+  p2_param_locate: pending
+  p3_frame_measure: pending
+  p4_logic_complete: pending
+  p5_docs: in_progress
+
+# ---- 关键地址（总线地址；NROM-128 会镜像 +0x4000）----
+anchors:
+  reset: null
+  nmi: null
+  irq: null
+
+tags: []
