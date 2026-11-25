@@ -141,10 +141,13 @@ tables, overlays, and code reached only through indirect dispatch.
 
 1. Enable Mesen2's **CDL** logger (Debug → Code/Data Logger), let the game run
    through menus and gameplay, save the `.cdl`.
-2. `python tools/cdl.py` merges CDL with static discovery and reports real
-   coverage. `tools/selftest_cdl.py` validates the parser against a known file.
-3. `python tools/analyze_autorun.py` compares **manual play vs unattended
-   auto-play** coverage.
+2. `python tools/cdl.py [path/to/file.cdl]` merges CDL with static discovery and
+   reports real coverage, auto-detecting the file if you omit the path.
+   `tools/selftest_cdl.py` validates the parser against a known file.
+3. Run it **twice** — once on a CDL captured from manual play, once on a CDL
+   captured from unattended auto-play — and compare the merged-coverage line of
+   each report. Copy `L2-spec/_cdl-compare.md` aside between runs: it is
+   overwritten in place.
 
 Measured on the reference title: static 40.4 %, auto-play CDL 35.7 %, manual
 play only 30.5 %. **Unattended auto-play beats a human.** Let a script mash

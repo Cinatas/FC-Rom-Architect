@@ -30,6 +30,7 @@
 ```
 FC-Rom-Architect/
 ├── README.md
+├── LICENSE                        MIT（只覆盖本仓库的代码与文档，不涉及 ROM）
 └── nes-remake-spec/               ← 装到 ~/.dsh/skills/ 或 <repo>/.dsh/skills/ 的那一层
     ├── SKILL.md                   主流程：6 个阶段 + 交付定义
     ├── bootstrap.ps1              Windows：一条命令装好工具链（自动下载 Mesen2）
@@ -182,8 +183,8 @@ DISPLAY=:99 ./Mesen --testRunner <rom> <script.lua>
   `.sh` 一律 LF（转成 CRLF 在 Linux 上会 `bad interpreter`）。
 - 提交前自查：`git status` 里不应出现任何 ROM 或 `L2-spec/ L3-data/ evidence/ *.cdl`。
 
-**License**：尚未选定。在选定之前，除 GitHub 服务条款允许的浏览与 fork 外，
-未授予复制、再分发或商用许可——需要请开 issue 讨论。
+**License**：[MIT](LICENSE)。可自由使用、修改、再分发（含商用），保留版权声明即可。
+该许可只覆盖**本仓库的代码与文档**；ROM 的版权另属其权利人，不在本许可范围内。
 
 ---
 
@@ -202,4 +203,5 @@ exec-callback stack reads to recover computed callers → write the graded spec.
 **Not in this repository:** no ROMs, no per-game reverse-engineering output (`L2-spec/`, `L3-data/`,
 `evidence/`, `.cdl`, disassembly exports), no bundled toolchain binaries. Bring your own legally obtained cartridge.
 
-License: not chosen yet.
+License: [MIT](LICENSE), covering this repository's code and documentation only —
+not any ROM's contents.

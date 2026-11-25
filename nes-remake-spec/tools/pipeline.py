@@ -5,7 +5,7 @@ P1（普查）：递归下降代码发现、代码/数据分区、指针表候�
            ASCII 字符串
 
 所有产物写到 game 目录下，脚本通过 __file__ 定位路径，无需传参：
-    python bomberman\tools\pipeline.py
+    python <game>\\tools\\pipeline.py
 """
 from __future__ import annotations
 
@@ -17,9 +17,9 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-HERE = Path(__file__).resolve().parent          # .../bomberman/tools
-GAME = HERE.parent                              # .../bomberman
-ROOT = GAME.parent                              # .../逆向FC
+HERE = Path(__file__).resolve().parent          # .../<game>/tools
+GAME = HERE.parent                              # .../<game>
+ROOT = GAME.parent                              # .../<workspace root>
 
 DATA = GAME / "L3-data"
 EVID = GAME / "evidence"

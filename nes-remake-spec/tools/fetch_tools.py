@@ -15,9 +15,9 @@
 
 用法
 ----
-    python bomberman\\tools\\fetch_tools.py            # 下载缺失的
-    python bomberman\\tools\\fetch_tools.py --force    # 强制重新下载
-    python bomberman\\tools\\fetch_tools.py --list     # 只查版本不下载
+    python <game>\\tools\\fetch_tools.py            # 下载缺失的
+    python <game>\\tools\\fetch_tools.py --force    # 强制重新下载
+    python <game>\\tools\\fetch_tools.py --list     # 只查版本不下载
 
 产物
 ----
@@ -44,7 +44,7 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = Path(__file__).resolve().parent
-REPO_ROOT = HERE.parent.parent          # .../逆向FC
+REPO_ROOT = HERE.parent.parent          # .../<workspace root>
 TOOLS = REPO_ROOT / "tools"
 DOWNLOADS = TOOLS / "_downloads"
 
@@ -267,8 +267,8 @@ def main() -> None:
 
     readme = ["# tools/ — 第三方软件",
               "",
-              "本目录存放下载的第三方工具，与 `bomberman/tools/`（自研提取脚本）分开。",
-              "由 `bomberman/tools/fetch_tools.py` 生成，重跑会覆盖本文件。",
+              "本目录存放下载的第三方工具，与 `<game>/tools/`（自研提取脚本）分开。",
+              "由 `<game>/tools/fetch_tools.py` 生成，重跑会覆盖本文件。",
               "",
               "## 内容",
               "",
@@ -315,9 +315,9 @@ def main() -> None:
                "## 更新",
                "",
                "```powershell",
-               "python bomberman\\tools\\fetch_tools.py            # 只下缺失的",
-               "python bomberman\\tools\\fetch_tools.py --force    # 强制重下最新版",
-               "python bomberman\\tools\\fetch_tools.py --list     # 只查版本",
+               "python <game>\\tools\\fetch_tools.py            # 只下缺失的",
+               "python <game>\\tools\\fetch_tools.py --force    # 强制重下最新版",
+               "python <game>\\tools\\fetch_tools.py --list     # 只查版本",
                "```",
                "",
                "慢速链路下单次下载可能需要数分钟到十几分钟，脚本设了 3600s 上限与",
